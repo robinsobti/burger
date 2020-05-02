@@ -4,6 +4,7 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
+import classes from './BurgerBuilder.css';
 
 const prices = {
     salad: 0.5,
@@ -80,7 +81,7 @@ state = {
             disabled[type] = disabled[type]<=0;
         }
         return (
-            <Aux>
+            <Aux className={classes.BurgerBuilder}>
                 <Burger ingredients = {this.state.ingredients}/>
                 <Modal show={this.state.purchasing} backdropClicked={this.backdropClickedHandler} orderClicked={this.orderClickedHandler}>
                     <OrderSummary ingredients = {this.state.ingredients} price={this.state.totalPrice}> </OrderSummary>
